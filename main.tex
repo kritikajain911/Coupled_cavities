@@ -1,0 +1,345 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{comment}
+\usepackage{derivative}
+\usepackage{verbatim}
+\usepackage{braket}
+
+\title{Normal modes of Coupled cavities}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Outline}
+
+\begin{equation}
+\text{M}=\left(
+\begin{array}{ccc}
+ \Delta _1 & \text{v1}^* & 0 \\
+ \text{v1} & 0 & \text{v2} \\
+ 0 & \text{v2}^* & \Delta _2 \\
+\end{array}
+\right)
+\end{equation}
+where $\Delta _1= \omega_{a1}-\omega_{b}$, $\Delta _2= \omega_{a2}-\omega_{b}$, v1 is a1-b coupling, v2 is a2-b coupling and rotating frame is $\omega_b$.\\
+
+Characteristic polynomial of M is
+\begin{equation}
+-\Delta _2 \text{v1} \text{v1}^*+\lambda  \text{v1} \text{v1}^*-\Delta _1 \text{v2} \text{v2}^*+\lambda  \text{v2} \text{v2}^*+\Delta _1 \lambda ^2+\Delta _2 \lambda ^2-\Delta _1 \Delta _2 \lambda -\lambda ^3
+    \end{equation}
+
+Roots of characteristic polynomial of M are :
+ \begin{equation}
+\text{$\lambda_+$}=\text{A1}-\frac{1}{6} \left(\frac{\text{S1}}{\text{S2}}+2^{2/3} \text{S2}\right) 
+\end{equation}
+ \begin{equation}
+\text{$\lambda_0$}=\text{A1}+\frac{1}{12} \left(\frac{\left(1-i \sqrt{3}\right) \text{S1}}{\text{S2}}+\left(1+i \sqrt{3}\right) \left(2^{2/3} \text{S2}\right)\right)
+\end{equation}
+ \begin{equation}
+\text{$\lambda_-$}=\text{A1}+\frac{1}{12} \left(\frac{\left(1+i \sqrt{3}\right) \text{S1}}{\text{S2}}+\left(1-i \sqrt{3}\right) \left(2^{2/3} \text{S2}\right)\right) 
+\end{equation}
+
+
+where, 
+\begin{equation}
+    \text{A1}=\frac{1}{3} \left(\Delta _1+\Delta _2\right) 
+\end{equation}
+
+\begin{equation}
+\text{S1}=2 \sqrt[3]{2} \left(\Delta _1^2-\Delta _2 \Delta _1+\Delta _2^2+3 \left(\left|\text{v1}\right|^2+\left|\text{v2}\right|^2\right)\right)
+ \end{equation}
+ % \left(\text{S1}=2 \sqrt[3]{2} \left(3 \left(\text{v1}^2+\text{v2}^2\right)\right)\right)
+ \begin{multline}
+      \text{S2}=\sqrt[3]{-2 \Delta _1^3+3 \Delta _2 \Delta _1^2+3 \Delta _2^2 \Delta _1-2 \Delta _2^3-9 \Delta _1 \left|\text{v1}\right|^2+18 \Delta _2 \left|\text{v1}\right|^2+18 \Delta _1 \left|\text{v2}\right|^2-9 \Delta _2 \left|\text{v2}\right|^2+S}  
+      \end{multline}
+      
+   \begin{multline}
+S=\sqrt{\left(2 \Delta _1^3-3 \Delta _2 \Delta _1^2+2 \Delta _2^3+3 \Delta _1 \left(-\Delta _2^2+3 \left|\text{v1}\right|^2-6 \left|\text{v2}\right|^2\right)+9 \Delta _2\left(\left|\text{v2}\right|^2-2 \left|\text{v1}\right|^2\right)\right)^2-} \\ {
+4 \left(\Delta _1^2-\Delta _2 \Delta _1+\Delta _2^2+3 \left(\left|\text{v1}\right|^2+\left|\text{v2}\right|^2\right)\right)^3}  
+\end{multline}
+
+Unitary matrix U is given by eigen vectors of M :
+\begin{equation}
+\text{U}=\left(
+\begin{array}{ccc}
+ -\frac{\left(\text{$\lambda_+$} \Delta _2\right){}^*-\left(\text{$\lambda_+$}^*\right)^2+\left|\text{v2}\right|^2}{\text{N1}} & -\frac{\left(\text{$\lambda_0$} \Delta _2\right){}^*-\left(\text{$\lambda_0$}^*\right)^2+\left|\text{v2}\right|^2}{\text{N2}}& -\frac{\left(\text{$\lambda_-$} \Delta _2\right){}^*-\left(\text{$\lambda_-$}^*\right)^2+\left|\text{v2}\right|^2}{\text{N3}}\\
+ 
+\frac{\text{v1}^* \left(\text{$\lambda_+$}^*-\left(\Delta _2\right){}^*\right)}{\text{N1}} & \frac{\text{v1}^* \left(\text{$\lambda_0$}^*-\left(\Delta _2\right){}^*\right)}{\text{N2}} & \frac{\text{v1}^* \left(\text{$\lambda_-$}^*-\left(\Delta _2\right){}^*\right)}{\text{N3}} \\
+\frac{\text{v1}^* \text{v2}}{\text{N1}} & \frac{\text{v1}^* \text{v2}}{\text{N2}} & \frac{\text{v1}^* \text{v2}}{\text{N3}} \\
+\end{array}\right)
+\end{equation}
+ where,
+\begin{equation}
+\text{N1}=\text{v1}^* \text{v2} \sqrt{{\left| \frac{\left|\text{v2}\right|^2-\text{$\lambda_+$}^2+\text{$\lambda_+$} \Delta _2}{\text{v1} \text{v2}^*}\right|}^2+{\left| \frac{\text{$\lambda_+$}-\Delta _2}{\text{v2}^*}\right|}^2+1}
+\end{equation}
+
+\begin{equation}
+\text{N2}=\text{v1}^* \text{v2} \sqrt{{\left| \frac{\left|\text{v2}\right|^2-\text{$\lambda_0$}^2+\text{$\lambda_0$} \Delta _2}{\text{v1} \text{v2}^*}\right|}^2+{\left| \frac{\text{$\lambda_0$}-\Delta _2}{\text{v2}^*}\right|}^2+1}
+\end{equation}
+
+\begin{equation}
+\text{N3}=\text{v1}^* \text{v2} \sqrt{{\left| \frac{\left|\text{v2}\right|^2-\text{$\lambda_-$}^2+\text{$\lambda_-$} \Delta _2}{\text{v1} \text{v2}^*}\right| }^2+{\left| \frac{\text{$\lambda_-$}-\Delta _2}{\text{v2}^*}\right| }^2+1}
+\end{equation}
+
+$$
+C= \begin{pmatrix}
+  C_+\\
+  C_0 \\
+  C_-
+  \\
+\end{pmatrix} =  U^{\dagger} a=\left(
+\begin{array}{ccc}
+ -\frac{\left(\text{$\lambda_+$} \Delta _2\right){}^*-\left(\text{$\lambda_+$}^*\right)^2+\left|\text{v2}\right|^2}{\text{N1}} &\frac{\text{v1}^* \left(\text{$\lambda_+$}^*-\left(\Delta _2\right){}^*\right)}{\text{N1}} & \frac{\text{v1}^* \text{v2}}{\text{N1}} \\
+ -\frac{\left(\text{$\lambda_0$} \Delta _2\right){}^*-\left(\text{$\lambda_0$}^*\right)^2+\left|\text{v2}\right|^2}{\text{N2}} &\frac{\text{v1}^* \left(\text{$\lambda_0$}^*-\left(\Delta _2\right){}^*\right)}{\text{N2}} & \frac{\text{v1}^* \text{v2}}{\text{N2}} \\
+ -\frac{\left(\text{$\lambda_-$} \Delta _2\right){}^*-\left(\text{$\lambda_-$}^*\right)^2+\left|\text{v2}\right|^2}{\text{N3}} &\frac{\text{v1}^* \left(\text{$\lambda_-$}^*-\left(\Delta _2\right){}^*\right)}{\text{N3}} & \frac{\text{v1}^* \text{v2}}{\text{N3}} \\
+\end{array}
+\right)
+\begin{pmatrix}
+  a1\\
+  b \\
+  a2 \\
+\end{pmatrix}
+$$
+
+\begin{equation}
+    C_+= \left[  -\frac{\left(\text{$\lambda_+$} \Delta _2\right){}^*-\left(\text{$\lambda_+$}^*\right)^2+\left|\text{v2}\right|^2}{\text{N1}} \right] a1 + \left[ \frac{\text{v1}^* \left(\text{$\lambda_+$}^*-\left(\Delta _2\right){}^*\right)}{\text{N1}} \right] b + \left[\frac{\text{v1}^* \text{v2}}{\text{N1}}\right] a2
+\end{equation}
+
+\begin{equation}
+    C_0= \left[  -\frac{\left(\text{$\lambda_0$} \Delta _2\right){}^*-\left(\text{$\lambda_0$}^*\right)^2+\left|\text{v2}\right|^2}{\text{N2}} \right] a1 + \left[ \frac{\text{v1}^* \left(\text{$\lambda_0$}^*-\left(\Delta _2\right){}^*\right)}{\text{N2}} \right] b + \left[\frac{\text{v1}^* \text{v2}}{\text{N2}}\right] a2
+\end{equation}
+
+\begin{equation}
+    C_-= \left[  -\frac{\left(\text{$\lambda_-$} \Delta _2\right){}^*-\left(\text{$\lambda_-$}^*\right)^2+\left|\text{v2}\right|^2}{\text{N3}} \right] a1 + \left[ \frac{\text{v1}^* \left(\text{$\lambda_-$}^*-\left(\Delta _2\right){}^*\right)}{\text{N3}} \right] b + \left[\frac{\text{v1}^* \text{v2}}{\text{N3}}\right] a2
+\end{equation}
+
+Writing in compact form :
+$$
+C= \begin{pmatrix}
+  C_+\\
+  C_0 \\
+  C_-
+  \\
+\end{pmatrix} =  U^{\dagger} a=\left(
+\begin{array}{ccc}
+ u_{11} & u_{12} & u_{13} \\
+ u_{21} & u_{22} & u_{23} \\
+ u_{31} & u_{32} & u_{33} \\
+ \end{array}
+\right)
+\begin{pmatrix}
+  a1\\
+  b \\
+  a2 \\
+\end{pmatrix}
+$$
+\\
+\\ \\ \\
+\begin{equation}
+\label{eq:C+}
+    C_+= u_{11} a1 + u_{12} b + u_{13} a2
+\end{equation}
+
+\begin{equation}
+    C_0= u_{21} a1 + u_{22} b + u_{23} a2
+\end{equation}
+
+\begin{equation}
+\label{eq:C-}
+    C_-= u_{31} a1 + u_{32} b + u_{33} a2
+\end{equation}
+
+Molmer sorensen hamiltonian for normal dark mode $C_0$ in case of identical cavities:
+
+\begin{equation}
+    H_{MS} = \sum_{i=1}^{2} \frac{g_{effdi}}{2} (C_0 e^{-i \delta t} + C_0^{\dagger} e^{i \delta t}) (\sigma^{\dagger}_i+\sigma_i) 
+\end{equation}
+
+%\begin{equation}
+%    H_{MS} = g_{eff_{d}} (C_0 e^{-i \delta t} + C_0^{+} e^{i \delta t}) S_x 
+%\end{equation}
+where,
+\begin{equation}
+ C_0 = \frac{v2^*}{N_0} a1 + \frac{v1^*}{N_0} a2   
+\end{equation}
+or in general,
+\begin{equation}
+ C_0 = c_1 a1 + c_2 a2.    
+\end{equation}
+and $g_{effdi}$ is effective coupling constant of the coupling between ith atom and the normal dark mode. 
+In Aoki's paper (equation 7) of coupled cavities, the coupling constant between the ith atom and the dark mode is given by 
+\begin{equation}
+    g_{di} = c_{i} g,
+\end{equation}
+hence,
+\begin{equation}
+    g_{effdi} = c_{i} g_{eff},
+\end{equation}
+because
+\begin{equation}
+    g_{eff} = \frac{g\Omega_1}{\Delta_1} = \frac{g\Omega_2}{\Delta_2}.
+\end{equation}
+Hence,
+
+\begin{equation}
+    H_{MS} = \sum_{i=1}^{2} \frac{c_i}{2} g_{eff}(C_0 e^{-i \delta t} + C_0^{\dagger} e^{i \delta t}) (\sigma^{\dagger}_i+\sigma_i) 
+\end{equation}
+ \begin{equation}
+ \label{H_{MS}}
+    H_{MS} = g_{eff} (C_{0} e^{-i \delta t} + C_{0}^{\dagger} e^{i \delta t}) S_x^{new} 
+\end{equation}
+
+\begin{equation}
+    S_{x}^{new} = \sum_{i=1}^{2} \frac{c_i}{2} (\sigma^{\dagger}_i+\sigma_i)  
+\end{equation}
+and
+\begin{equation}
+    \Delta_1 = \frac{\Delta_{C1} + \Delta_{L1}}{2},
+\end{equation}
+
+\begin{equation}
+    \Delta_2 = \frac{\Delta_{C2} + \Delta_{L2}}{2}.
+\end{equation}
+
+%In case of non-identical cavities, we have three normal modes $C_{+}$, $C_{0}$ and $C_{-}$. Here, to make molmer sorensen gate, we excite any two modes, say  $C_{+}$ and $C_{0}$. For that, the atoms are externally driven by four laser fields. Two lasers are corresponding to the mode $C_0$ and other two are for $C_+$. The two lasers corresponding to the mode $C_0$ off-resonantly drive the transitions $\ket{e} \leftrightarrow \ket{r1}$ and $\ket{g} \leftrightarrow \ket{r2}$ with Rabi frequencies $\Omega_{10}$ and $\Omega_{20}$, and detunings $\Delta_{L_{10}}$ and $\Delta_{L_{10}}$, respectively. Similarly, other two lasers corresponding to the mode $C_+$ off-resonantly drive the transitions $\ket{e} \leftrightarrow \ket{r1}$ and $\ket{g} \leftrightarrow \ket{r2}$ with Rabi frequencies $\Omega_{1+}$ and $\Omega_{2+}$, and detunings $\Delta_{L_{1+}}$ and $\Delta_{L_{1+}}$, respectively. We assume $\delta_0=\delta_+=\delta$.\\
+
+
+For non-identical cavities, if we consider linear combination of two normal modes eq. \ref{eq:C+} and eq. \ref{eq:C-}, we get a dark mode i.e.,
+
+\begin{equation}
+    C_{dark}^{unnormalized} = u_{32} C_+ - u_{12} C_-
+\end{equation}
+
+\begin{equation}
+    C_{dark} = \frac{1}{N} \left[(u_{32} u_{11} - u_{12} u_{31}) a_{1} + (u_{13} u_{32} - u_{33} u_{12}) a_{2} \right]
+\end{equation}
+
+where 
+\begin{equation}
+   N= \sqrt{(u_{32} u_{11} - u_{12} u_{31})^2 + (u_{13} u_{32} - u_{33} u_{12})^2}
+\end{equation}
+
+If we are able to excite this new dark mode experimentally, it is possible to make molmer-sorenson gate similar to eq. \ref{H_{MS}}. \\
+
+%\begin{comment}
+    OR 
+Using previous method, 
+Molmer sorensen hamiltonian :
+\begin{equation}
+    H_{MS} = \sum_{i=1}^{2} \frac{g_{effdi}}{2} (C_0 e^{-i \delta t} + C_0^{\dagger} e^{i \delta t}) (\sigma^{\dagger}_i+\sigma_i) 
+\end{equation}
+\begin{equation}
+     H_{MS} =  \sum_{i=1}^{2} \frac{g_{eff0i}}{2} (C_0 e^{-i \delta t} + C_0^{\dagger} e^{i \delta t}) (\sigma^{\dagger}_i+\sigma_i)  + \frac{g_{eff+i}}{2} (C_+ e^{-i \delta t} + C_+^{\dagger} e^{i \delta t}) (\sigma^{\dagger}_i+\sigma_i) 
+\end{equation}
+or
+\begin{equation}
+     H_{MS} =  \sum_{i=1}^{2} \frac{1}{2} (g_{eff0i} C_0 + g_{eff+i} C_+ )(\sigma^{\dagger}_i+\sigma_i)  e^{-i \delta t} + h.c.
+\end{equation}
+
+\begin{equation}
+     H_{MS} =  \sum_{i=1}^{2} \frac{1}{2} [g_{eff0i} (u_{21} a1 + u_{22} b + u_{23} a2) + g_{eff+i} (u_{21} a1 + u_{22} b + u_{23} a2) ](\sigma^{\dagger}_i+\sigma_i)  e^{-i \delta t} + h.c.
+\end{equation}
+
+
+
+We want to suppress the excitation in connecting fiber mode $b$, hence
+
+\begin{equation}
+  (g_{eff0i} u_{22}  + g_{eff+i} u_{12} ) = 0
+\end{equation}
+gives us
+\begin{equation}
+    g_{eff+i} = -\left[\frac{u_{22}}{u_{12}}\right] g_{eff0i} 
+\end{equation}
+
+\begin{equation}
+    g_{+i} \frac{\Omega_{1+i}}{\Delta_{1+i}} = -\left[\frac{u_{22}}{u_{12}}\right] g_{0i} \frac{\Omega_{10i}}{\Delta_{10i}} 
+\end{equation}
+
+\begin{equation}
+    g c_{0i} \frac{\Omega_{1+i}}{\Delta_{1+i}} = -\left[\frac{u_{22}}{u_{12}}\right] g c_{+i} \frac{\Omega_{10i}}{\Delta_{10i}} 
+\end{equation}
+
+\begin{equation}
+     \Omega_{1+i} = -\left[\frac{u_{22}}{u_{12}}\right] \frac{c_{+i}}{c_{0i}} \frac{\Omega_{10i}}{\Delta_{10i}}{\Delta_{1+i}} 
+\end{equation}
+
+If we choose our lasers according to above equation hamiltonian will become : 
+
+\begin{equation}
+     H_{MS} =  \sum_{i=1}^{2} \frac{1}{2} [g_{eff0i} (u_{21} a1 + u_{23} a2) + g_{eff+i} (u_{21} a1 + u_{23} a2) ](\sigma^{\dagger}_i+\sigma_i)  e^{-i \delta t} + h.c.
+\end{equation}
+
+\begin{equation}
+     H_{MS} =  \sum_{i=1}^{2} \frac{1}{2} [g_{eff0i} (u_{21} a1 + u_{23} a2) - \frac{u_{22}}{u_{12}} g_{eff0i} (u_{21} a1 + u_{23} a2) ](\sigma^{\dagger}_i+\sigma_i)  e^{-i \delta t} + h.c.
+\end{equation}
+
+\begin{equation}
+     H_{MS} =  \sum_{i=1}^{2} \frac{1}{2} [(u_{21} a1 + u_{23} a2) - \frac{u_{22}}{u_{12}} (u_{21} a1 + u_{23} a2) ]g_{eff0i} (\sigma^{\dagger}_i+\sigma_i)  e^{-i \delta t} + h.c.
+\end{equation} 
+ or 
+\begin{equation}
+     H_{MS} = [(u_{21} a1 + u_{23} a2) - \frac{u_{22}}{u_{12}} (u_{21} a1 + u_{23} a2) ]  S_x e^{-i \delta t} + h.c.
+\end{equation} 
+
+We get a new dark mode 
+
+\begin{equation}
+ C_{d}^{unnormalized} = \left[\left( u_{21} - \frac{u_{22}}{u_{12}}u_{11}\right) a1 + \left( u_{23} - \frac{u_{22}}{u_{12}} u_{13}\right) a2\right]   
+\end{equation}
+then, we normalize it, 
+\begin{equation}
+ C_{d} = \frac{1}{N}\left[\left( u_{21} - \frac{u_{22}}{u_{12}}u_{11}\right) a1 + \left( u_{23} - \frac{u_{22}}{u_{12}} u_{13}\right) a2\right]   
+\end{equation}
+or,
+\begin{equation}
+ C_{d} = c_1a1 + c_2a2   
+\end{equation}
+
+where, 
+
+\begin{equation}
+    N = \sqrt{\left( u_{21} - \frac{u_{22}}{u_{12}}u_{11}\right)^2 + \left( u_{23} - \frac{u_{22}}{u_{12}} u_{13}\right)^2},
+\end{equation}
+
+
+and new general Molmer Sorensen hamiltonian is 
+
+\begin{equation}
+    H_{MS} = \sum_{i=1}^{2} \frac{g_{effdi}^{new}}{2} (C_0 e^{-i \delta t} + C_0^{\dagger} e^{i \delta t}) (\sigma^{\dagger}_i+\sigma_i) 
+\end{equation}
+
+\begin{equation}
+    g_{effdi}^{new} = c_{i} g_{eff}^{new},
+\end{equation}
+or, finally we get Molmer Sorensen hamiltonian in the simplest form as
+\begin{equation}
+      H_{MS} = g_{eff}^{new} (C_{d} e^{-i \delta t} + C_{d}^{+} e^{i \delta t}) S_x^{new} 
+\end{equation}
+ where,
+ \begin{equation}
+    S_x^{new} = \sum_{i=1}^{2} \frac{c_i}{2} (\sigma^{\dagger}_i+\sigma_i)  
+\end{equation}
+\begin{equation}
+    g_{eff}^{new} = g_{eff}N
+\end{equation} 
+
+\begin{equation}
+    g_{eff} = \frac{g_1\Omega_1}{\Delta_1} = \frac{g_2\Omega_2}{\Delta_2}.
+\end{equation}
+where, $g_1$ , $g_2$ are coupling constants between atoms and their respective cavities and we assume $g_1=g_2$. 
+
+%\end{comment}
+
+
+\end{document}
+
+
+
+ 
